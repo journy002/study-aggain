@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Todolist from "./component/todolist";
+import AddForm from "./component/addForm";
 
 function App() {
   const users = [
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <>
+      <AddForm />
       <Todolist users={users} />
     </>
   );
