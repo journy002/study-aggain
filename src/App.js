@@ -50,7 +50,8 @@ function App() {
       email,
     };
 
-    setUsers([...users, user]);
+    // setUsers([...users, user]);
+    setUsers(users.concat(user));
 
     setInputs({
       username: "",
@@ -58,6 +59,10 @@ function App() {
     });
 
     nextId.current += 1;
+  };
+
+  const onDelete = (id) => {
+    setUsers(users.filter((user) => user.id !== id));
   };
 
   return (
@@ -68,7 +73,7 @@ function App() {
         onCreate={onCreate}
         onChange={onChange}
       />
-      <UserList users={users} />
+      <UserList users={users} onDelete={onDelete} />
     </>
   );
 }
