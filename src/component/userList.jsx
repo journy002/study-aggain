@@ -4,30 +4,12 @@ function User({ user }) {
   return (
     <div>
       <b>{user.username}</b>
-      <span>{user.email}</span>
+      <span>({user.email})</span>
     </div>
   );
 }
 
-function UserList() {
-  const users = [
-    {
-      id: 1,
-      username: "omms",
-      email: "omms@naver.com",
-    },
-    {
-      id: 2,
-      username: "omms2",
-      email: "omms@naver.com2",
-    },
-    {
-      id: 3,
-      username: "omms3",
-      email: "omms@naver.com3",
-    },
-  ];
-
+function UserList({ users }) {
   return (
     <div>
       {users.map((user) => (
